@@ -6,6 +6,6 @@ services:
     image: user-svc
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./dockerfile
     ports:
       - 8080:8080
