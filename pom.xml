@@ -38,11 +38,11 @@
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
-				<version>3.9.1.2184</version>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
 				<groupId>org.sonarsource.scanner.maven</groupId>
+				<version>3.9.1.2184</version>
 				<artifactId>sonar-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
