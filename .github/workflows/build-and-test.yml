@@ -24,23 +24,19 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
-
-  push:
-    needs: build_and_test
-    if: success() && github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    
-    steps:
-
+      run: mvn clean package
+  
     - name: Login to DockerHub
+      if: success() && github.ref == 'refs/heads/main'
       uses: docker/login-action@v2.0.0
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     - name: Build and push Docker images
+      if: success() && github.ref == 'refs/heads/main'
       uses: docker/build-push-action@v3.1.1
       with:
+        context: .
         push: true
         tags: judahlit/chess_tournament_manager:user-svc
