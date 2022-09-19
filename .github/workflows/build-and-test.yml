@@ -35,5 +35,6 @@ jobs:
     - name: Build and push Docker images
       uses: docker/build-push-action@v3.1.1
       with:
+        context: .
         push: true
         tags: judahlit/chess_tournament_manager:user-svc
