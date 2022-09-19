@@ -24,8 +24,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Maven Build without Tests
-      run: mvn -DskipTests package
+    - name: Maven Build and Test
+      run: mvn clean package
 
     - name: Generate test coverage
       run: mvn sonar:sonar -Pcoverage
