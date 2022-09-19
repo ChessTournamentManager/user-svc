@@ -25,13 +25,13 @@ jobs:
         cache: maven
 
     - name: Maven Build and Test
-      run: mvn install
+      run: mvn clean package
 
     - name: SonarCloud Build and Analyze
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn verify sonar:sonar \
+      run: mvn install sonar:sonar \
         "-Dsonar.host.url=https://sonarcloud.io" \
         "-Dsonar.organization=chesstournamentmanager" \
         "-Dsonar.projectKey=ChessTournamentManager_user-svc"
