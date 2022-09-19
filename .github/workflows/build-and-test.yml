@@ -24,10 +24,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Maven Build and Test
-      run: mvn clean package
-
-    - name: SonarCloud Build and Analyze
+    - name: Build, Test and Upload to SonarCloud
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
