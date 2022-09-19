@@ -59,9 +59,6 @@
 							</executions>
 				</plugin>
 		</plugins>
-		<pluginGroups>
-			<pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
-		</pluginGroups>
 		<finalName>user-svc</finalName>
 	</build>
 
