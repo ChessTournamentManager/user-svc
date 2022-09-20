@@ -80,6 +80,4 @@
 		</plugins>
 		<finalName>user-svc</finalName>
 	</build>
-
-	
 </project>
